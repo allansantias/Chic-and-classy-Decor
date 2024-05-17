@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .form h2 {
+            margin-bottom: 20px;
+        }
+        .form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btnn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btnn:hover {
+            background-color: #218838;
+        }
+        .link {
+            margin-top: 20px;
+        }
+        .link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+        .liw {
+            margin: 20px 0;
+        }
+        .icon a {
+            margin: 0 10px;
+            color: #333;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .icon a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h2>Login here</h2>
+        <form id="loginForm" action="/login" method="post" onsubmit="return validateForm()">
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <button type="submit" class="btnn">Login</button>
+        </form>
+
+        <p class="link">Don't have an account?<br>
+            <a href="#">Sign up</a><br>
+            <a href="#">Forgot password?</a>
+        </p>
+        <p class="liw">Log in with</p>
+
+        <div class="icon">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+        </div>
+    </div>
+    <!-- Include Ionicons library -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            if (email === "" || password === "") {
+                alert("Both fields must be filled out");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
